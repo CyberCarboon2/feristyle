@@ -1,0 +1,154 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.60%;
+}
+
+body {
+  background: linear-gradient(90deg, #74b6ff 0%, #1bdcfd 50%, #45d9fc 100%);
+  font-family: Monospace;
+  font-weight: normal;
+  margin: 0;
+  line-height: 1,5;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  background: #ffffff;
+  width: 90%;
+  padding: 2rem;
+  box-shadow: 0 0px 2.2px rgba(0, 0, 0, 0.028), 0 0px 5.3 rgba(0, 0, 0, 0.04), 0 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  background: #1bdcfd;
+  color: black;
+  letter-spacing: 0.1rem;
+  padding: 1rem;
+  cursor: default;
+  font-family: serif;
+  text-align: center;
+}
+
+form,
+input,
+textarea,
+button {
+  font-family: inherit;
+  font-size: initial;
+}
+
+.form-group label {
+  display: block;
+  margin: 2rem 0 0.05rem 0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: 0;
+  transition: border 0.15s;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  height: 4.6rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit {
+  background: #1bdcfd;
+  color: white;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.submit:hover {
+  background: rgba(173, 216, 230, 1);
+  color: black;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  border: 1px solid #1bdcfd;
+}
+
+.ndase {
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-family: Georgia;
+}
+
+@ media screen and (min-width: 576px) {
+  .wrapper {
+    width: 70%;
+  }
+}
+
+@ media screen and (min-width: 768px) {
+  .wrapper {
+    width: 55%;
+  }
+}
+
+.kopi {
+  text-decoration: none;
+  font-family: Courier;
+}
+
+.head {
+  text-decoration: Georgia;
+  font-size: 2rem;
+  display: flex;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: black;
+  transition: .3s ease-in-out;
+  z-index: -1;
+}
+
+button {
+  padding: .8rem 1.5rem;
+  font-size: 1rem;
+  color: yellow;
+  font-family: Consolas;
+  font-weight: 800;
+  background-color: transparent;
+  border: 3px double black;
+  box-shadow: 1px 2px 3px black;
+  border-radius: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  color: black;
+}
+
+button:hover:before {
+  width: 100%;
+}
