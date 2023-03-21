@@ -1,46 +1,38 @@
-<?php 
-	//KONEKSI KE DB
-$conn = mysqli_connect("localhost", "root", "", "dbpengunjung");
-
-	//ambil data
-$result = mysqli_query($conn, "SELECT * FROM tbpengunjung");
- ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>chek in</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belajar PHP</title>
+  <style>
+    .container h1 {
+      text-align: center;
+      margin: auto;
+      font-family: 'Verdana', Serif;
+      margin-top: 20px;
+    }
+    .container .form {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-	<h1>Daftar Pengunjung</h1>
-
-	<table border="1" cellpadding="10" cellspacing="0">
-		
-		<tr>
-			<th>No. Urut</th>
-			<th>Aksi</th>
-			<th>No. Pengunjung</th>
-			<th>Nama</th>
-			<th>Alamat</th>
-			<th>Tujuan</th>
-		</tr>
-		<?php $i = 1; ?>
-		<?php while( $row = mysqli_fetch_assoc($result) ): ?>
-		<tr>
-			<td><?= $i;  ?></td>
-			<td>
-				<a href="">Ubah</a> /
-				<a href="">Hapus</a>
-			</td>
-			<td><?= $row["no_pengunjung"]; ?></td>
-			<td><?= $row["nama"]; ?></td>
-			<td><?= $row["alamat"]; ?></td>
-			<td><?= $row["tujuan"];?></td>
-		</tr>
-		<?php $i++; ?>
-		<?php endwhile; ?>
-	</table>
+   <form action="proses.php" method="POST">
+    <h5>Nama</h5>
+    <input type="text" name="nama">
+    <br>
+    <h5>Masukkan Alamat Email</h5>
+    <input type="email" name="email">
+    <br>
+    <h5>Pilih Jenis Kelamin</h5>
+    <select name="jenis_kelamin" id="">
+      <option value="Laki_laki">Laki-laki</option>
+      <option value="Perempuan">Perempuan</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit" value="Kirim">
+  </form>
 </body>
 </html>
